@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guillaume Ellin — Mandataire Immobilier à Perpignan</title>
+  <meta name="description" content="Guillaume Ellin, mandataire immobilier indépendant chez Propriétés-Privées.com à Perpignan et ses environs. Achat, vente, estimation gratuite." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --dark: #1A1A2E;
+      --dark-mid: #16213E;
+      --text: #2D2D2D;
+      --text-light: #666;
+      --bg: #FAFAF8;
+      --white: #FFFFFF;
+      --border: #E8E4DA;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--dark) !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 60%, #0F3460 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 48px 80px;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: 30%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(15,52,96,0.4) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 8px 16px;
+      border-radius: 100px;
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before { content: '★'; font-size: 0.7rem; }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 40px;
+      max-width: 480px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── CARTE CONTACT HERO ── */
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-card-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-sub {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      margin-bottom: 28px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,0.35); }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { border-color: var(--gold); }
+
+    .contact-form select option { background: var(--dark); color: var(--white); }
+
+    .contact-form textarea { resize: vertical; min-height: 90px; }
+
+    .contact-form .btn-primary { width: 100%; justify-content: center; margin-top: 4px; }
+
+    /* ── SECTIONS COMMUNES ── */
+    section { padding: 96px 48px; }
+
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    /* ── À PROPOS ── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-photo {
+      position: relative;
+    }
+
+    .about-photo-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 20px;
+      display: block;
+    }
+
+    .about-photo-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--gold);
+      color: var(--dark);
+      border-radius: 14px;
+      padding: 16px 22px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .about-content h2 { margin-bottom: 24px; }
+
+    .about-text {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--bg);
+      border-radius: 10px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .about-feature-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    .about-feature-text { font-size: 0.9rem; color: var(--text); line-height: 1.4; }
+
+    .about-feature-text strong { color: var(--dark); display: block; margin-bottom: 2px; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 20px 48px rgba(0,0,0,0.09);
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .service-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* ── ZONE ── */
+    #zone { background: var(--dark); }
+
+    #zone h2 { color: var(--white); }
+    #zone .section-desc { color: rgba(255,255,255,0.5); }
+    #zone .section-tag { color: var(--gold-light); }
+
+    .zone-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .zone-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .zone-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.88rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .zone-item:hover { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.3); }
+
+    .zone-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .zone-map {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 3rem;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .zone-map span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.25);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    /* ── TÉMOIGNAGES ── */
+    #testimonials { background: var(--white); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .testimonial-quote {
+      font-size: 3rem;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      color: var(--text);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--dark), var(--dark-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+
+    .testimonial-detail {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    .stars { color: var(--gold); font-size: 0.75rem; margin-bottom: 12px; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 16px; }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--white);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-method:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,0.12); }
+
+    .contact-method-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--dark), var(--dark-mid));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-method-label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .contact-method-value {
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 0.95rem;
+    }
+
+    .contact-form-box {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-form-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .contact-form-box p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+    }
+
+    .form-light input,
+    .form-light select,
+    .form-light textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 13px 16px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-light input:focus,
+    .form-light select:focus,
+    .form-light textarea:focus { border-color: var(--gold); }
+
+    .form-light textarea { resize: vertical; min-height: 110px; }
+
+    .form-light .btn-primary { width: 100%; justify-content: center; }
+
+    /* ── PP BANNER ── */
+    .pp-banner {
+      background: linear-gradient(90deg, var(--dark) 0%, var(--dark-mid) 100%);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .pp-banner-text {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .pp-logo-placeholder {
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 8px;
+      padding: 10px 16px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+    }
+
+    .pp-banner-text p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.88rem;
+    }
+
+    .pp-banner-text strong { color: var(--white); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 32px 48px;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 64px 24px; }
+      #hero { padding: 100px 24px 64px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .about-grid,
+      .contact-grid,
+      .zone-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid,
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-wrap: wrap; gap: 20px; }
+      .pp-banner { flex-direction: column; text-align: center; }
+      .about-photo-badge { right: 0; }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">
+    <img src="PP.jpg" alt="Guillaume Ellin" class="nav-avatar" />
+    Guillaume Ellin
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#zone">Zone</a></li>
+    <li><a href="#testimonials">Avis</a></li>
+    <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">Mandataire Immobilier &bull; Perpignan</div>
+      <h1>Votre projet<br />immobilier<br /><span>à Perpignan</span></h1>
+      <p class="hero-subtitle">Guillaume Ellin vous accompagne à chaque étape — de l'estimation à la signature — avec expertise et disponibilité.</p>
+      <div class="hero-actions">
+        <a href="https://www.mycazot.com" target="_blank" rel="noopener" class="btn-primary">📞 Estimation gratuite</a>
+        <a href="#about" class="btn-secondary">En savoir plus →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">120+</div>
+          <div class="stat-label">Ventes réalisées</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">8 ans</div>
+          <div class="stat-label">D'expérience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Clients satisfaits</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-title">Demande rapide</div>
+      <div class="hero-card-sub">Réponse sous 24h garantie</div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Votre prénom et nom" required />
+        <input type="tel" placeholder="Votre téléphone" required />
+        <input type="email" placeholder="Votre e-mail" />
+        <select>
+          <option value="">Type de projet…</option>
+          <option>Vendre mon bien</option>
+          <option>Acheter un bien</option>
+          <option>Estimation gratuite</option>
+          <option>Autre renseignement</option>
+        </select>
+        <textarea placeholder="Décrivez votre projet en quelques mots…"></textarea>
+        <button type="submit" class="btn-primary">Envoyer ma demande →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="PP.jpg" alt="Guillaume Ellin — Mandataire immobilier à Perpignan" class="about-photo-img" />
+        <div class="about-photo-badge">
+          Mandataire<br />Propriétés-Privées.com
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <span class="section-tag">À propos</span>
+        <h2>Guillaume Ellin,<br />votre expert local</h2>
+        <p class="about-text">Passionné par l'immobilier et profondément ancré dans le territoire catalan, Guillaume Ellin met son expertise au service des particuliers souhaitant vendre ou acheter dans la région de Perpignan.</p>
+        <p class="about-text">En tant que mandataire indépendant chez <strong>Propriétés-Privées.com</strong>, Guillaume bénéficie de la puissance d'un réseau national tout en offrant l'accompagnement personnalisé d'un professionnel local.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">🏡</div>
+            <div class="about-feature-text">
+              <strong>Connaissance du marché local</strong>
+              Perpignan, Canet, Argelès, le Roussillon — chaque quartier n'a aucun secret pour moi.
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🤝</div>
+            <div class="about-feature-text">
+              <strong>Accompagnement de A à Z</strong>
+              Estimation, photos, annonce, visites, négociation, acte notarial.
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">📱</div>
+            <div class="about-feature-text">
+              <strong>Disponibilité 7j/7</strong>
+              Vous avez une question, je réponds. Week-end compris.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-tag">Ce que je propose</span>
+      <h2>Mes services</h2>
+      <p class="section-desc">Un accompagnement complet pour votre projet immobilier, de l'évaluation à la remise des clés.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🏷️</div>
+        <h3>Estimation gratuite</h3>
+        <p>Une évaluation précise de votre bien, basée sur les données du marché local et les ventes récentes du secteur. Sans engagement.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📸</div>
+        <h3>Mise en valeur</h3>
+        <p>Photos professionnelles, rédaction d'annonce attractive, diffusion sur Propriétés-Privées.com et les grands portails immobiliers.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🔍</div>
+        <h3>Recherche acheteurs</h3>
+        <p>Accès à une base d'acheteurs qualifiés, organisation des visites, suivi rigoureux de chaque candidat sérieux.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">⚖️</div>
+        <h3>Négociation</h3>
+        <p>Défense de vos intérêts lors de la négociation du prix, accompagnement jusqu'à l'offre d'achat signée.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📋</div>
+        <h3>Accompagnement notarial</h3>
+        <p>Suivi du dossier, coordination avec le notaire, vérification des documents et présence le jour de la signature.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🌐</div>
+        <h3>Réseau national</h3>
+        <p>En tant que mandataire Propriétés-Privées.com, bénéficiez de la visibilité d'un réseau de plus de 5 000 mandataires en France.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE -->
+<section id="zone">
+  <div class="section-inner">
+    <div class="zone-grid">
+      <div>
+        <div class="reveal">
+          <span class="section-tag">Zone d'intervention</span>
+          <h2>Perpignan et tout le Roussillon</h2>
+          <p class="section-desc">J'interviens principalement sur Perpignan et ses environs, jusqu'aux plages du Roussillon et aux piémonts des Pyrénées.</p>
+        </div>
+        <div class="zone-list reveal">
+          <div class="zone-item"><div class="zone-dot"></div>Perpignan</div>
+          <div class="zone-item"><div class="zone-dot"></div>Canet-en-Roussillon</div>
+          <div class="zone-item"><div class="zone-dot"></div>Argelès-sur-Mer</div>
+          <div class="zone-item"><div class="zone-dot"></div>Saint-Cyprien</div>
+          <div class="zone-item"><div class="zone-dot"></div>Le Barcarès</div>
+          <div class="zone-item"><div class="zone-dot"></div>Rivesaltes</div>
+          <div class="zone-item"><div class="zone-dot"></div>Thuir</div>
+          <div class="zone-item"><div class="zone-dot"></div>Elne</div>
+          <div class="zone-item"><div class="zone-dot"></div>Collioure</div>
+          <div class="zone-item"><div class="zone-dot"></div>Céret</div>
+          <div class="zone-item"><div class="zone-dot"></div>Prades</div>
+          <div class="zone-item"><div class="zone-dot"></div>Et alentours…</div>
+        </div>
+      </div>
+      <div class="zone-map reveal">
+        🗺️
+        <span>Carte Roussillon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-tag">Ils témoignent</span>
+      <h2>Ce que disent mes clients</h2>
+      <p class="section-desc">Des particuliers satisfaits à chaque étape de leur projet immobilier.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Guillaume a vendu notre appartement à Perpignan en moins de 3 semaines, au prix que nous espérions. Son professionnalisme et sa réactivité ont été remarquables du début à la fin.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SM</div>
+          <div>
+            <div class="testimonial-name">Sophie & Marc</div>
+            <div class="testimonial-detail">Vente appartement T3 — Perpignan centre</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Cherchant une maison avec jardin côté Canet, Guillaume a trouvé exactement ce qu'il nous fallait. Il connaît parfaitement le secteur et les bons prix. Je recommande vivement !</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">LR</div>
+          <div>
+            <div class="testimonial-name">Laure R.</div>
+            <div class="testimonial-detail">Achat maison — Canet-en-Roussillon</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Service impeccable, disponible le week-end pour les visites, honnête sur la valeur du bien. Guillaume nous a évité de mauvaises surprises grâce à ses conseils avisés.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PD</div>
+          <div>
+            <div class="testimonial-name">Pierre D.</div>
+            <div class="testimonial-detail">Achat villa — Argelès-sur-Mer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">Contact</span>
+        <h2>Parlons de<br />votre projet</h2>
+        <p class="section-desc" style="margin-bottom: 0;">Que vous souhaitiez vendre, acheter ou simplement obtenir une estimation, je suis disponible pour vous répondre rapidement.</p>
+        <div class="contact-methods">
+          <a href="tel:+33662365925" class="contact-method">
+            <div class="contact-method-icon">📞</div>
+            <div>
+              <div class="contact-method-label">Téléphone</div>
+              <div class="contact-method-value">06 62 36 59 25</div>
+            </div>
+          </a>
+          <a href="mailto:g.ellin@proprietes-privees.com" class="contact-method">
+            <div class="contact-method-icon">✉️</div>
+            <div>
+              <div class="contact-method-label">Email</div>
+              <div class="contact-method-value">g.ellin@proprietes-privees.com</div>
+            </div>
+          </a>
+          <a href="https://wa.me/33662365925" target="_blank" class="contact-method">
+            <div class="contact-method-icon">💬</div>
+            <div>
+              <div class="contact-method-label">WhatsApp</div>
+              <div class="contact-method-value">Message rapide</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-box reveal">
+        <h3>Estimation gratuite</h3>
+        <p>Renseignez ce formulaire, je vous rappelle sous 24h.</p>
+        <form class="form-light" onsubmit="handleSubmit(event)">
+          <input type="text" placeholder="Prénom et nom *" required />
+          <input type="tel" placeholder="Téléphone *" required />
+          <input type="email" placeholder="E-mail" />
+          <select>
+            <option value="">Type de bien…</option>
+            <option>Appartement</option>
+            <option>Maison / Villa</option>
+            <option>Terrain</option>
+            <option>Local commercial</option>
+            <option>Autre</option>
+          </select>
+          <select>
+            <option value="">Mon projet…</option>
+            <option>Vendre mon bien</option>
+            <option>Acheter un bien</option>
+            <option>Les deux</option>
+          </select>
+          <textarea placeholder="Adresse du bien, superficie, caractéristiques…"></textarea>
+          <button type="submit" class="btn-primary">📩 Envoyer ma demande</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANDEAU PP -->
+<div class="pp-banner">
+  <div class="pp-banner-text">
+    <div class="pp-logo-placeholder">Propriétés-Privées.com</div>
+    <p><strong>Réseau national de mandataires indépendants</strong><br />Guillaume Ellin, mandataire immatriculé au RSAC de Perpignan</p>
+  </div>
+  <a href="https://www.mycazot.com" target="_blank" rel="noopener" class="btn-primary" style="flex-shrink:0;">Estimer mon bien</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Guillaume Ellin — Mandataire immobilier indépendant chez <a href="#">Propriétés-Privées.com</a> · Perpignan (66) · <a href="mailto:g.ellin@proprietes-privees.com">Contact</a></p>
+  <p style="margin-top:8px;">Carte professionnelle délivrée par la CCI — Transaction sur immeuble et fonds de commerce</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form submission
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.textContent = '✅ Message envoyé !';
+    btn.style.background = '#2d7a45';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }
+
+  // Smooth nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--gold-light)'
+        : '';
+    });
+  });
+</script>
+</body>
+</html>
